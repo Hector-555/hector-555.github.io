@@ -1,0 +1,129 @@
+.card-tour
+    height: 52rem
+    perspective: 150rem
+    -moz-perspective: 150rem
+    position: relative
+    @media only screen and (max-width: 900px), (hover: none)
+        height: auto
+
+    &__side
+        height: 52rem
+        transition: all .6s ease-out
+        color: white
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        backface-visibility: hidden
+        box-shadow: $box-shadow
+        border-radius: .5rem
+        overflow: hidden
+        @media only screen and (max-width: 900px), (hover: none)
+            height: auto
+            position: relative
+
+        &_front
+            @media only screen and (max-width: 900px), (hover: none)
+                padding-bottom: 5rem
+        &_back
+            background: linear-gradient(120deg, $color-brown, $color-brown-dark)
+            transform: rotateY(180deg)
+            @media only screen and (max-width: 900px), (hover: none)
+                transform: rotateY(0deg)
+                padding: 5rem
+                padding-top: 12rem
+                margin-top: -5rem
+                clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%)
+
+    &:hover &__side_front
+        transform: rotateY(-180deg)
+        @include respond(tab-port)
+            transform: rotateY(0deg)
+    &:hover &__side_back
+        transform: rotateY(0deg)
+    &__img
+        background-blend-mode: hard-light
+        height: 21rem
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+        @media only screen and (max-width: 900px), (hover: none)
+            height: 30rem
+        &_1
+            background: $color-brown url('../img/pop-tours-foto-1.png') center / cover no-repeat
+        &_2
+            background: $color-brown url('../img/pop-tours-foto-2.png') center / cover no-repeat
+        &_3
+            background: $color-brown url('../img/pop-tours-foto-3.png') center / cover no-repeat
+    &__title
+        font-weight: 300
+        font-size: 2.8rem
+        line-height: 3.4rem
+        text-align: right
+        letter-spacing: .2rem
+        text-transform: uppercase
+        position: absolute
+        top: 16rem
+        right: 0
+        @include respond(tab-port)
+            top: 25rem
+    &__description
+        ul
+            list-style: none
+            margin: 0 auto
+            width: 75%
+            text-align: center
+            li
+                font-weight: 700
+                font-size: 1.6rem
+                line-height: 1.9rem
+                letter-spacing: .2rem
+                color: $color-gray
+                margin-bottom: 2rem
+                border-bottom: 1px solid $color-gray
+                display: inline-block
+                &:last-child
+                    margin-bottom: 0
+                @include respond(tab-land)
+                    font-size: 1.3rem
+                @include respond(tab-port)
+                    font-size: 2.2rem
+
+    &__span
+        background: linear-gradient(90deg, $color-brown, $color-brown-dark)
+        padding: 1rem 2rem .3rem
+        &-1
+        &-2
+            position: absolute
+            top: 3.5rem
+            right: 0
+            padding-bottom: 1rem
+            padding-top: .3rem
+
+    &__backside-box
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        @media only screen and (max-width: 900px), (hover: none)
+            position: relative
+            top: 0
+            left: 0
+            transform: translate(0, 0)
+            text-align: center
+    &__text
+        margin-bottom: 8.7rem
+        letter-spacing: .2rem
+        text-transform: uppercase
+        text-align: center
+        color: $color-white
+        &_1
+            font-weight: 300
+            font-size: 1.6rem
+            line-height: 1.9rem
+        &_2
+            font-weight: 500
+            font-size: 6rem
+            line-height: 7.2rem
+.backside-box
+    &_button
+        @include respond(tab-land)
+            padding: 1rem 1rem !important

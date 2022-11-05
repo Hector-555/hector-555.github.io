@@ -1,0 +1,14 @@
+.adventure-card
+    padding: 2.5rem
+    background-color: $color-white
+    opacity: .8
+    border-radius: .5rem
+    text-align: center
+    box-shadow: $box-shadow-active
+    transition: all .3s
+    &:hover
+        transform: translateY(-1rem)
+    &_item
+        margin-bottom: 2.5rem
+    @include respond(tab-land)
+        padding: 1.5rem
